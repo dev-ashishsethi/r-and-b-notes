@@ -1,0 +1,18 @@
+.on-left {
+  grid-area: sidebar;
+}
+
+.landing-image {
+  grid-area: main;
+  width: 40rem;
+  margin-top: 15rem;
+}
+.landing-text {
+  margin-top: 15rem;
+}
+
+.login-btn-landing {
+  padding-inline-start: 4rem;
+  padding-inline-end: 4rem;
+  font-size: 1rem;
+}

@@ -1,51 +1,418 @@
-.App {
-  text-align: center;
+@import url("https://r-and-b-ui.netlify.app/component.css");
+:root {
+  --color-blue: blue;
+  --color-red: rgb(6, 173, 11);
+  --color-violet: violet;
+  --color-yellow: rgb(255, 174, 0);
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.layout-container {
+  display: grid;
+  grid-template-areas:
+    "nav nav"
+    "sidebar main"
+    "footer footer";
+  grid-template-columns: 1fr 2fr;
+  max-width: 1200px;
+  margin: auto;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.remove-editable {
+  position: absolute;
+  right: 10px;
+  background-color: transparent;
+  color: var(--red);
+  font-weight: 700;
+  top: 7px;
+  cursor: pointer;
 }
-
-.App-header {
-  background-color: #22201c;
-  min-height: 100vh;
+.notes-container {
   display: flex;
+  flex-wrap: wrap;
+  margin-top: 4rem;
+  gap: 1rem;
+}
+.navbar {
+  grid-area: nav;
+  display: flex;
+  justify-content: space-between;
+}
+.on-this-page {
+  font-weight: 800;
+}
+#sort-and-filter {
+  margin-left: 1rem;
+}
+.content {
+  position: relative;
+  grid-area: main;
+}
+.add-note {
+  height: 2rem;
+  resize: none;
+}
+.add-subnote {
+  height: 10rem;
+  resize: none;
+}
+.add-new-note-focused {
+  display: none;
+  width: 100%;
+  border-radius: 5px;
+  transition: 0.2s ease-out;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
+  background-color: var(--white);
 }
 
-.App-link {
-  color: #61dafb;
+.filter-btn {
+  margin: 0rem 0rem 0rem 1rem;
+}
+.filter-btn:focus-within .sort-and-filter {
+  display: block;
+}
+.add-new-note {
+  align-self: center;
+  display: inline-flex;
+}
+.blue {
+  background-color: blue;
+}
+.new-note {
+  position: relative;
+  width: 30rem;
+  background-color: var(--white);
+  border: none;
+  border-radius: 5px;
+
+  padding: 6px;
+  text-align: left;
+}
+.text-note {
+  background-color: transparent;
+}
+.new-note:focus-within .add-new-note-focused {
+  display: inline-flex;
+  transition: 0.2s ease-out;
+}
+.new-note:focus-within {
+  background-color: transparent;
+  transition: 0.2s ease-out;
+}
+.new-note:focus-within .text-note {
+  display: none;
+}
+.icon-on-card {
+  position: absolute;
+  top: 4px;
+  right: 5px;
+  background-color: var(--white);
+  cursor: pointer;
+  font-size: 1.7rem;
 }
 
-.brand-title {
-  font-size: 3rem;
-  color: #d9d9d9;
+.sort-and-filter {
+  background-color: transparent;
+  text-align: left;
+  display: none;
+  height: 10rem;
+  overflow: auto;
+}
+.clear-all {
+  text-decoration: underline;
+  text-align: center;
+  background-color: transparent;
+  color: var(--black);
+
+  margin: 8px 0px 0px 0px;
+}
+.filter-label {
+  background-color: var(--white);
+  display: inline-block;
+  margin-top: 6px;
+  word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.label-input-section {
+  background-color: transparent;
+}
+.custom-hr {
+  color: var(--black);
+  width: 90%;
+  height: 1px;
+  margin: 0rem 1rem;
+  padding-inline: 1rem 1rem;
+}
+.notes-search {
+  width: 30rem;
+  height: 2rem;
+  align-self: center;
+  grid-area: nav1;
+}
+.login-btn {
+  grid-area: nav1;
+  width: 5rem;
+  margin: 0rem;
+  justify-self: end;
+  align-self: center;
+}
+.sidebar {
+  grid-area: sidebar;
+}
+.sidebar-container {
+  list-style: none;
 }
 
-.brand-title span {
-  color: #ffde59;
+.sidebar-items {
+  margin-bottom: 2rem;
+  font-size: x-large;
 }
-
-.brand-description {
-  font-size: 1.4rem;
+.sidebar-icons {
+  color: var(--white);
 }
-
-.links {
+.description {
+  padding-inline: 1rem 1rem;
+  width: 15rem;
+}
+.labels-section {
+  background-color: var(--white);
+  border-radius: 5px;
+  padding-block: 6px;
+  padding-inline: 6px;
+  margin-bottom: 6px;
+}
+.labels-add-to-note {
+  background-color: transparent;
+  border: 1px solid var(--black);
+  padding: 6px;
+  margin-right: 6px;
+  border-radius: 5px;
+}
+.labels-remove {
+  background-color: transparent;
+  border: 1px solid var(--black);
+  border-radius: 100rem;
+  padding-inline: 5px;
+  padding-block-end: 2px;
+  margin: 1rem 0;
+  margin-inline-start: 5px;
+  cursor: pointer;
+  font-weight: 700;
+}
+.title {
+  padding-inline: 1rem 1rem;
+}
+.icons-section {
   display: flex;
+  background-color: var(--white);
+  justify-content: center;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+}
+.icon-note {
+  background-color: transparent;
+  height: 1.2rem;
+  margin-left: 2.4rem;
+  font-size: 1.2rem;
+  cursor: pointer;
 }
 
-.links a {
-  color: #d9d9d9;
-  font-size: 1.2rem;
+.date-and-label {
+  display: flex;
+  background-color: transparent;
+  flex-wrap: wrap;
+}
+.label-chip {
+  margin-left: 3rem;
+  background-color: transparent;
+  color: var(--black);
+  border: 1px solid var(--black);
+  padding: 5px;
+  border-radius: 10px;
+  width: 5rem;
+  text-align: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.date {
+  margin-left: 2rem;
+  background-color: transparent;
+  color: var(--black);
+  padding: 5px;
+}
+
+.filter-icon {
+  background-color: transparent;
+}
+
+.icons-on-note {
+  background-color: transparent;
+}
+.icons-on-note > i {
+  background-color: transparent;
+  margin: 0.5rem 0rem 0.5rem 1rem;
+}
+.priority {
+  background-color: transparent;
+  font-weight: 600;
+  margin-left: 2rem;
+  margin-top: 1rem;
+  display: inline-flex;
+  align-items: center;
+}
+.priority-chip {
+  margin: 0;
+  display: inline-block;
+  margin-left: 2.1rem;
+}
+.color-pallete,
+.label-section {
+  position: absolute;
+  z-index: 3;
+  top: 7rem;
+  left: 1rem;
+  background-color: var(--white);
+  display: none;
+  width: 10rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  padding-right: 0rem;
+  border: 1px solid var(--black);
+  border-radius: 5px;
+}
+
+.color-pallete-on-card {
+  position: absolute;
+  z-index: 3;
+  top: 8.5rem;
+  left: 1rem;
+  background-color: var(--white);
+  display: none;
+  width: 10rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  padding-right: 0rem;
+  border: 1px solid var(--black);
+  border-radius: 5px;
+}
+.color-pallete-icon {
+  background-color: transparent;
+  display: inline-flex;
+}
+.color-pallete-icon:focus-within div {
+  display: inline-flex;
+}
+.color-pallete-icon-on-card {
+  background-color: transparent;
+  display: inline-flex;
+}
+.color-pallete-icon-on-card:focus-within div {
+  display: inline-flex;
+}
+.inside-form {
+  appearance: none;
   margin: 1rem;
+  margin-right: 0rem;
+}
+.colors {
+  display: inline-block;
+  border-radius: 5px;
+  border: 1px solid var(--black);
+  width: 3rem;
+  height: 1rem;
+  text-align: center;
+  background-color: var(--white);
+}
+.colors-on-card {
+  display: inline-block;
+  border-radius: 5px;
+  border: 1px solid var(--black);
+  width: 3rem;
+  height: 1rem;
+  text-align: center;
+  background-color: var(--white);
+}
+.blue {
+  background-color: var(--color-blue);
+  color: var(--white);
+}
+.red {
+  background-color: var(--color-red);
+  color: var(--white);
+}
+.violet {
+  background-color: var(--color-violet);
+  color: var(--white);
+}
+.yellow {
+  background-color: var(--color-yellow);
+  color: var(--white);
+}
+
+.add-labels-icon {
+  background-color: transparent;
+  display: inline-flex;
+}
+.add-labels-icon:focus-within div {
+  display: inline-flex;
+}
+.label-input {
+  width: 8rem;
+  border: 1px solid var(--black);
+}
+.add-lbl-btn {
+  margin: 0rem;
+  padding: 6px;
+}
+.date-label {
+  background-color: transparent;
+  margin-inline: 1rem 1rem;
+}
+.priority-label {
+  background-color: transparent;
+  margin-left: 6px;
+}
+.add-note-btn {
+  display: inline-block;
+  margin: 0rem;
+  padding: 6px;
+  margin-left: 1rem;
+}
+input::placeholder {
+  color: black;
+}
+textarea::placeholder {
+  color: #000;
+}
+.color-icon {
+  background: url(https://api.iconify.design/ic:baseline-color-lens.svg);
+}
+.color-icon-on-card {
+  background: url(https://api.iconify.design/ic:baseline-color-lens.svg);
+  margin-bottom: 0;
+  height: 0;
+}
+.color-icon-label {
+  background-color: transparent;
+  width: 1rem;
+  margin: 0px;
+
+  position: relative;
+  z-index: 4;
+  height: 2px;
+  font-size: 1.2rem;
+  top: 1.4rem;
+}
+.color-icon-label-on-card {
+  background-color: transparent;
+  width: 1rem;
+  margin: 0px;
+
+  position: relative;
+  z-index: 4;
+  height: 2px;
+  font-size: 1.2rem;
+}
+.icon-add-notes {
+  margin-left: 0px;
 }
