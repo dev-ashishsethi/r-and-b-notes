@@ -1,8 +1,15 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../Context/loginContext";
 
 export function Nav() {
-  const { login, setShowSignIn } = useAuth();
+  const { login, setLogin, setShowSignIn } = useAuth();
+  const navigate = useNavigate();
+
+  const logOutHandler = () => {
+    localStorage.removeItem("login");
+    setLogin(false);
+    navigate("/");
+  };
   const LoginHandler = () => {
     setShowSignIn(true);
   };
@@ -21,7 +28,9 @@ export function Nav() {
         placeholder="Search for notes"
       />
       {login ? (
-        <button className="btn btn-primary login-btn">Log Out</button>
+        <button className="btn btn-primary login-btn" onClick={logOutHandler}>
+          Log Out
+        </button>
       ) : (
         <Link to="/signIn" className="login-btn">
           {" "}

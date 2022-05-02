@@ -1,11 +1,12 @@
 import { useFilter } from "../../Context/filterContext";
+import { IcBaselineArrowDropDown } from "../../icons/icons";
 
 export function Filter({ labels }) {
   const { filter, filterDispatch } = useFilter();
   console.log("label", filter.labelFilter);
   return (
     <button className="btn btn-secondary filter-btn" id="sort-and-filter">
-      Sort & Filter <i className="fas fa-caret-down filter-icon"></i>
+      Sort & Filter &#11206;
       <section className="sort-and-filter">
         <p
           className="clear-all"

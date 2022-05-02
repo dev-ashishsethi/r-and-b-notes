@@ -1,23 +1,24 @@
+import { Link } from "react-router-dom";
 import * as All from "../../icons/icons";
 export function Sidebar() {
   return (
     <section className="sidebar">
       <ul className="sidebar-container">
-        <a href="">
+        <Link to="/home">
           <li className="sidebar-items">
             <All.IonHome /> Home
           </li>
-        </a>
+        </Link>
         <a href="./Labels/Labels.html">
           <li className="sidebar-items">
             <All.IcBaselineLabel /> Labels
           </li>
         </a>
-        <a href="">
+        <Link to="/archive">
           <li className="sidebar-items">
             <All.BiArchiveFill /> Archive
           </li>
-        </a>
+        </Link>
         <a href="./Trash/Trash.html">
           <li className="sidebar-items">
             <All.ClarityTrashSolid /> Trash

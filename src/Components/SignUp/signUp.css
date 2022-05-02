@@ -1,20 +1,38 @@
-.signIn-form {
+.signUp-form {
   display: grid;
   grid-template-areas:
+    "fname lname"
+    "finput linput"
     "emaillabel passlabel"
     "email pass"
-    "btn1 btn2"
-    "test test";
+    "confpasslabel -"
+    "confpass -"
+    "btn1 btn2";
 
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0fr 0fr 0fr 0fr 0fr 0fr;
   column-gap: 1rem;
   row-gap: 9px;
 }
-#test-login {
-  grid-area: test;
-}
+
 .form-label {
   color: var(--white);
+}
+
+#fname-label {
+  grid-area: fname;
+}
+
+#finput {
+  grid-area: finput;
+}
+
+#lname-label {
+  grid-area: lname;
+}
+
+#linput {
+  grid-area: linput;
 }
 
 #email-label {
@@ -31,20 +49,28 @@
   grid-area: pass;
 }
 
-#form-btn1 {
+#confpass-label {
+  grid-area: confpasslabel;
+}
+#confpass-input {
+  grid-area: confpass;
+}
+
+#form-btn3 {
   grid-area: btn1;
 }
-#form-btn2 {
+#form-btn4 {
   grid-area: btn2;
   text-align: center;
   font-size: 13.33px;
+  color: var(--black);
 }
 
 .form-container {
   display: flex;
   place-content: center;
   align-items: center;
-  height: 100%;
+  height: 83vh;
 }
 
 .form-subcontainer {
@@ -71,19 +97,18 @@
 .sign-input-box::placeholder {
   color: var(--white);
 }
+
+.password-section {
+  position: relative;
+}
+.eye-icon {
+  position: absolute;
+  top: 11px;
+  right: 7px;
+  color: var(--white);
+  cursor: pointer;
+}
 .show-sign-in {
   display: block;
   transform: translate(60%, 10%);
-}
-
-.do-not-show-sign-in {
-  display: none;
-}
-
-#form-btn2 {
-  color: var(--black);
-}
-
-.form-btn {
-  margin-left: 0rem;
 }
