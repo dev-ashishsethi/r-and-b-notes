@@ -1,0 +1,89 @@
+.signIn-form {
+  display: grid;
+  grid-template-areas:
+    "emaillabel passlabel"
+    "email pass"
+    "btn1 btn2"
+    "test test";
+
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1rem;
+  row-gap: 9px;
+}
+#test-login {
+  grid-area: test;
+}
+.form-label {
+  color: var(--white);
+}
+
+#email-label {
+  grid-area: emaillabel;
+}
+#email-input {
+  grid-area: email;
+}
+
+#pass-label {
+  grid-area: passlabel;
+}
+#pass-input {
+  grid-area: pass;
+}
+
+#form-btn1 {
+  grid-area: btn1;
+}
+#form-btn2 {
+  grid-area: btn2;
+  text-align: center;
+  font-size: 13.33px;
+}
+
+.form-container {
+  display: flex;
+  place-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.form-subcontainer {
+  padding: 2rem 4rem 4rem 4rem;
+  border: 1px solid var(--white);
+  border-radius: 10px;
+}
+
+.form-title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  color: var(--white);
+}
+.sign-input-box {
+  position: relative;
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 6px;
+  border: 1px solid var(--white);
+  color: var(--white);
+  height: 2.5rem;
+}
+.sign-input-box::placeholder {
+  color: var(--white);
+}
+.show-sign-in {
+  display: block;
+  transform: translate(50%, 50%);
+}
+
+.do-not-show-sign-in {
+  display: none;
+}
+
+#form-btn2 {
+  color: var(--black);
+}
+
+.form-btn {
+  margin-left: 0rem;
+}
