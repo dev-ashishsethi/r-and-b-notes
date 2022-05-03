@@ -15,6 +15,17 @@
   max-width: 1200px;
   margin: auto;
 }
+.alert {
+  position: absolute;
+  right: -90%;
+}
+.alerticon {
+  background-color: var(--white);
+  color: red;
+  padding-inline: 8px;
+  border-radius: 50%;
+  font-weight: 900;
+}
 .remove-editable {
   position: absolute;
   right: 10px;
@@ -241,6 +252,10 @@
 
 .filter-icon {
   background-color: transparent;
+}
+.w-100 {
+  width: 90%;
+  margin-top: 12px;
 }
 
 .icons-on-note {

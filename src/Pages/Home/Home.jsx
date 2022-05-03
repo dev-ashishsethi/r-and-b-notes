@@ -56,11 +56,10 @@ export function Home() {
             data: { note: note },
             headers: { authorization: token },
           });
-          //   setNotesData([...response.data.notes]);
+
           setOthersData(
             response.data.notes.filter((note) => note.pinned === false)
           );
-          //   setPinnedData(response.data.notes.filter((note) => note.pinned));
 
           setAllLabel((alllabel) => [...new Set([...alllabel, ...note.label])]);
         } catch (error) {

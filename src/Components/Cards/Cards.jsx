@@ -25,26 +25,41 @@ export function Card({ data, cardColor, counter }) {
   const [edit, setEdit] = useState(false);
 
   const colorHandler = (newColor, noteId) => {
-    note.isCardColor = true;
-    note.singleColor = newColor;
-    note.color = "white";
+    // note.isCardColor = true;
+    data.singleColor = newColor;
+    // note.color = "white";
+
     (async () => {
       const response = await axios({
         method: "POST",
         url: `/api/notes/${noteId}`,
-        data: { note: note },
+        data: {
+          note: data,
+        },
         headers: { authorization: token },
       });
-      setOthersData(
-        response.data.notes.filter((note) => note.pinned === false)
-      );
+      setOthersData(response.data.notes);
+
       console.log("cards", response.data.notes);
     })();
 
     console.log("in color handler");
-    // setIsEditable(true);
   };
-  const archiveHandler = () => {};
+  const archiveHandler = (noteId) => {
+    (async () => {
+      try {
+        const response = await axios({
+          method: "POST",
+          url: `/api/notes/archives/${noteId}`,
+          data: { note: data },
+          headers: { authorization: token },
+        });
+        setOthersData(response.data.notes);
+      } catch (error) {
+        console.error(error);
+      }
+    })();
+  };
   const trashHandler = () => {};
 
   const editHandler = () => {
@@ -113,7 +128,10 @@ export function Card({ data, cardColor, counter }) {
             ></div>
           </div>
         </form>
-        <All.BiArchiveFill className="icon-note" onClick={archiveHandler} />
+        <All.BiArchiveFill
+          className="icon-note"
+          onClick={() => archiveHandler(data._id)}
+        />
         <All.ClarityTrashSolid className="icon-note" onClick={trashHandler} />
         <All.IcBaselineEdit
           className="icon-note"
