@@ -9,26 +9,21 @@ export function Sidebar() {
             <All.IonHome /> Home
           </li>
         </Link>
-        <a href="./Labels/Labels.html">
+        <Link to="/label">
           <li className="sidebar-items">
             <All.IcBaselineLabel /> Labels
           </li>
-        </a>
+        </Link>
         <Link to="/archive">
           <li className="sidebar-items">
             <All.BiArchiveFill /> Archive
           </li>
         </Link>
-        <a href="./Trash/Trash.html">
+        <Link to="/trash">
           <li className="sidebar-items">
             <All.ClarityTrashSolid /> Trash
           </li>
-        </a>
-        <a href="">
-          <li className="sidebar-items">
-            <All.IonPersonSharp /> Profile
-          </li>
-        </a>
+        </Link>
       </ul>
     </section>
   );

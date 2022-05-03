@@ -17,8 +17,8 @@ export function Card({ data, cardColor, counter }) {
     dispatch,
     othersData,
     setOthersData,
-    pinnedData,
-    setPinnedData,
+    trashData,
+    setTrashData,
     isCardColor,
   } = useNote();
   const token = localStorage.getItem("login");
@@ -60,7 +60,22 @@ export function Card({ data, cardColor, counter }) {
       }
     })();
   };
-  const trashHandler = () => {};
+  const trashHandler = (noteId) => {
+    try {
+      (async () => {
+        const response = await axios({
+          method: "DELETE",
+          url: `/api/notes/${noteId}`,
+          data: { note: data },
+          headers: { authorization: token },
+        });
+        setOthersData(response.data.notes);
+        setTrashData((trashData) => [...trashData, data]);
+      })();
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const editHandler = () => {
     btnRef.current.focus();
@@ -132,7 +147,10 @@ export function Card({ data, cardColor, counter }) {
           className="icon-note"
           onClick={() => archiveHandler(data._id)}
         />
-        <All.ClarityTrashSolid className="icon-note" onClick={trashHandler} />
+        <All.ClarityTrashSolid
+          className="icon-note"
+          onClick={() => trashHandler(data._id)}
+        />
         <All.IcBaselineEdit
           className="icon-note"
           onClick={() => editHandler(data._id)}
