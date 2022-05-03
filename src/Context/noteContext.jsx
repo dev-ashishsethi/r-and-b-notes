@@ -9,7 +9,7 @@ export function NoteProvider({ children }) {
   const [isEditable, setIsEditable] = useState(false);
   const [isCardColor, setCardColor] = useState(false);
   const [alllabel, setAllLabel] = useState([]);
-  const [pinnedData, setPinnedData] = useState([]);
+  const [trashData, setTrashData] = useState([]);
   const [othersData, setOthersData] = useState([]);
   const date = new Date();
   const dateToday = new Date()
@@ -41,8 +41,8 @@ export function NoteProvider({ children }) {
         setIsEditable,
         othersData,
         setOthersData,
-        pinnedData,
-        setPinnedData,
+        trashData,
+        setTrashData,
       }}
     >
       {children}

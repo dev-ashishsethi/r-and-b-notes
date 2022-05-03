@@ -10,6 +10,8 @@ import { LandingPage } from "./Pages/LandingPage/LandingPage";
 import { useAuth } from "./Context/loginContext";
 import { SignUp } from "./Components/SignUp/SignUp";
 import { Archive } from "./Pages/Archive/Archive";
+import { Delete } from "./Pages/Delete/Delete";
+import { Label } from "./Pages/Label/Label";
 function App() {
   const { login } = useAuth();
   return (
@@ -24,6 +26,8 @@ function App() {
         <Route path="/signUp" element={<SignUp />} />
         {login && <Route path="/home" element={<Home />} />}
         {login && <Route path="/archive" element={<Archive />} />}
+        {login && <Route path="/trash" element={<Delete />} />}
+        {login && <Route path="/label" element={<Label />} />}
       </Routes>
       {/* </> */}
     </div>

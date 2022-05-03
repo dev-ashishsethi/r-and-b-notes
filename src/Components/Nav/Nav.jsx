@@ -22,11 +22,11 @@ export function Nav() {
         </p>
       </a>
 
-      <input
+      {/* <input
         type="text"
         className="searchbar notes-search"
         placeholder="Search for notes"
-      />
+      /> */}
       {login ? (
         <button className="btn btn-primary login-btn" onClick={logOutHandler}>
           Log Out
