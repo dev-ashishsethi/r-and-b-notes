@@ -27,7 +27,7 @@ export function Delete() {
     <section class="content">
       <h2>Trash Notes</h2>
       <div class="notes-container">
-        {trashData.length > 0 &&
+        {trashData.length > 0?
           trashData.map((trash) => (
             <div class={`card card-align-item-start ${trash.singleColor}`}>
               <h4 className={`title ${trash.singleColor}`}>{trash.title}</h4>
@@ -62,7 +62,7 @@ export function Delete() {
                 Restore Note
               </button>
             </div>
-          ))}
+          )):<h4>No Notes in Trash</h4>}
       </div>
     </section>
   );

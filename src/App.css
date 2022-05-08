@@ -284,27 +284,29 @@
 .label-section {
   position: absolute;
   z-index: 3;
-  top: 7rem;
+  top: 9rem;
   left: 1rem;
   background-color: var(--white);
   display: none;
-  width: 10rem;
+  width: 11rem;
   flex-wrap: wrap;
   gap: 1rem;
   padding: 1rem;
   padding-right: 0rem;
-  border: 1px solid var(--black);
+  border: 1px solid rgb(20 20 20);
   border-radius: 5px;
 }
-
+.label-section {
+  width: 15rem;
+}
 .color-pallete-on-card {
   position: absolute;
   z-index: 3;
-  top: 8.5rem;
+  top: 10rem;
   left: 1rem;
   background-color: var(--white);
   display: none;
-  width: 10rem;
+  width: 12rem;
   flex-wrap: wrap;
   gap: 1rem;
   padding: 1rem;
@@ -333,19 +335,19 @@
 }
 .colors {
   display: inline-block;
-  border-radius: 5px;
+  border-radius: 50%;
   border: 1px solid var(--black);
-  width: 3rem;
-  height: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
   text-align: center;
   background-color: var(--white);
 }
 .colors-on-card {
   display: inline-block;
-  border-radius: 5px;
+  border-radius: 50%;
   border: 1px solid var(--black);
-  width: 3rem;
-  height: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
   text-align: center;
   background-color: var(--white);
 }

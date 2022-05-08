@@ -44,7 +44,7 @@ export function Archive() {
       <h2>Archive Notes</h2>
 
       <div class="notes-container">
-        {archiveNotes.length > 0 &&
+        {archiveNotes.length > 0 ?
           archiveNotes.map((note) => (
             <div class={`card card-align-item-start ${note.singleColor}`}>
               <h4 className={`title ${note.singleColor}`}>{note.title}</h4>
@@ -76,7 +76,7 @@ export function Archive() {
                 Un-archive Note
               </button>
             </div>
-          ))}
+          )):<h4>No Notes in Archive</h4>}
       </div>
     </section>
   );
