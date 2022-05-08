@@ -1,9 +1,9 @@
 @import url("https://r-and-b-ui.netlify.app/component.css");
 :root {
-  --color-blue: blue;
-  --color-red: rgb(6, 173, 11);
-  --color-violet: violet;
-  --color-yellow: rgb(255, 174, 0);
+  --color-peach: #f5956e;
+  --color-red: #dbe589;
+  --color-violet: #b18df5;
+  --color-yellow: #f5c16e;
 }
 .layout-container {
   display: grid;
@@ -59,6 +59,8 @@
 .add-note {
   height: 2rem;
   resize: none;
+  font-size: 1rem;
+  font-weight: 600;
 }
 .add-subnote {
   height: 10rem;
@@ -348,20 +350,20 @@
   background-color: var(--white);
 }
 .blue {
-  background-color: var(--color-blue);
-  color: var(--white);
+  background-color: var(--color-peach);
+  color: var(--black);
 }
 .red {
   background-color: var(--color-red);
-  color: var(--white);
+  color: var(--black);
 }
 .violet {
   background-color: var(--color-violet);
-  color: var(--white);
+  color: var(--black);
 }
 .yellow {
   background-color: var(--color-yellow);
-  color: var(--white);
+  color: var(--black);
 }
 
 .add-labels-icon {
