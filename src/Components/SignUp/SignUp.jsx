@@ -3,6 +3,7 @@ import { useState, useReducer, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../Context/loginContext";
 import { IcBaselineRemoveRedEye } from "../../icons/icons";
+import { Toast } from "../Toast/Toast";
 import "./signUp.css";
 export function SignUp() {
   const [passwordType, setPasswordType] = useState("password");

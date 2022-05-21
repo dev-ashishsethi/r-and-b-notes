@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
+import { Toast } from "../../Components/Toast/Toast";
 import { useNote } from "../../Context/noteContext";
 
 export function Archive() {

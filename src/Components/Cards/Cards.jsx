@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useAuth } from "../../Context/loginContext";
 import { useNote } from "../../Context/noteContext";
 import * as All from "../../icons/icons";
+import { Toast } from "../Toast/Toast";
 export function Card({ data, cardColor, counter }) {
   const {
     note,
@@ -25,10 +26,8 @@ export function Card({ data, cardColor, counter }) {
   const [edit, setEdit] = useState(false);
 
   const colorHandler = (newColor, noteId) => {
-    // note.isCardColor = true;
     data.singleColor = newColor;
-    // note.color = "white";
-
+    
     (async () => {
       const response = await axios({
         method: "POST",
@@ -55,8 +54,9 @@ export function Card({ data, cardColor, counter }) {
           headers: { authorization: token },
         });
         setOthersData(response.data.notes);
+        Toast("success", "Note added to archive successfully");
       } catch (error) {
-        console.error(error);
+       Toast("error", error);
       }
     })();
   };
@@ -71,9 +71,10 @@ export function Card({ data, cardColor, counter }) {
         });
         setOthersData(response.data.notes);
         setTrashData((trashData) => [...trashData, data]);
+        Toast("success", "Note deleted successfully");
       })();
     } catch (error) {
-      console.error(error);
+      Toast("error", error);
     }
   };
 
