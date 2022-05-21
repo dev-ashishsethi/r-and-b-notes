@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+# R&B Notes in React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+R&B Notes is a Note App, where users can create, save, edit, archive and delete note.
 
-## Available Scripts
+## Authors
 
-In the project directory, you can run:
+- [@Ashish Sethi](https://github.com/dev-ashishsethi)
 
-### `yarn start`
+## WEBSITE VIDEO DEMO
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
+## Live App link
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [R&B Notes](https://r-and-b-notes.netlify.app/)
 
-### `yarn build`
+## Technologies used
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- HTML
+- CSS
+- JavaScript
+- ReactJS
+- Mockbee (for mock backend)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Features and Functionalities
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 1. Landing page :
 
-### `yarn eject`
+- Login button
+- Signup button
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 2. Home page :
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### Note Editor:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    Create a note with title, body, label, and color (on selecting from the color palette)
+    - Add color to note
+    - Add tags to note
+    - Add priority to note
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Filter Panel:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    There are two variant one is visible on desktop screens and another which has filter floating icon visible on mobile screen
 
-### Code Splitting
+    - Filter and/or sort notes by:
+    - Filter by tags
+    - Sort by creation date
+    - Sort by Priority
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 3. Label Page :
 
-### Analyzing the Bundle Size
+- All the notes are listed according to label category.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 4. Archive Page :
 
-### Making a Progressive Web App
+- Consist the notes which are archived from home page.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### 4. Trash Page :
 
-### Advanced Configuration
+- Consist the notes which are Trashed from home page.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### 6. Sign Up page -
 
-### Deployment
+- Input first and last name
+- Input email address
+- Input Password and verify password by click show password button
+- SignUp button
+- SignIn button
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### 7. Login page -
 
-### `yarn build` fails to minify
+- Input Username
+- Input password
+- Login button
+- Test Login button
+- Create a New Account button
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 8. Log out button
+
+
+### 10. Loading & Alerts/Toasts
+
+- User is notified when the password or email is wrong.
+- Loader is displayed for each API call, add to cart, remove from cart, move to wishlist, and for the update in quantity
+
+
+<br>
+
+#### 👨‍💻 Lets connect !
+
+<br>
+
+<a href="https://twitter.com/web_AshishSethi"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white"/></a>
+<a href="https://www.linkedin.com/in/aashishsethii01"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
