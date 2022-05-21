@@ -10,6 +10,10 @@ R&B Notes is a Note App, where users can create, save, edit, archive and delete 
 
 
 
+https://user-images.githubusercontent.com/89299065/169649013-68fd97fa-232f-419b-a51c-20fe9f6086bb.mp4
+
+
+
 ## Live App link
 
 - [R&B Notes](https://r-and-b-notes.netlify.app/)
