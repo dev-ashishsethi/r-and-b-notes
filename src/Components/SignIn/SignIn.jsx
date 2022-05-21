@@ -24,9 +24,10 @@ export function SignIn() {
       const response = await axios.post("/api/auth/login", loginData);
       localStorage.setItem("login", response.data.encodedToken);
       setLogin(true);
+      Toast("success", "Signed In successfully");
       navigate("/home");
     } catch (error) {
-      console.log(error);
+      Toast("error", error);
     }
   };
 

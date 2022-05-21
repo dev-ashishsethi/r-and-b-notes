@@ -18,9 +18,9 @@ export function Archive() {
         });
         setArchiveNotes(response.data.archives);
         setOthersData(response.data.notes);
-        console.log(response);
+        Toast("success", "Note restored successfully");
       } catch (error) {
-        console.error(error);
+        Toast("error", error);
       }
     })();
   };
@@ -33,7 +33,7 @@ export function Archive() {
           headers: { authorization: token },
         });
         setArchiveNotes(response.data.archives);
-        console.log(response);
+       
       } catch (error) {
         console.error(error);
       }

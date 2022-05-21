@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Toast } from "../../Components/Toast/Toast";
 import { useNote } from "../../Context/noteContext";
 
 export function Delete() {
@@ -18,9 +19,10 @@ export function Delete() {
         });
         setTrashData((trash) => trash.filter((note) => note._id !== noteId));
         setOthersData(response.data.notes);
+        Toast("success", "Deleted note restored successfully");
       })();
     } catch (error) {
-      console.error(error);
+      Toast("error", error);
     }
   };
   return (

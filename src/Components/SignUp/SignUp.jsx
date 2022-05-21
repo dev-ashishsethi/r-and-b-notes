@@ -55,10 +55,11 @@ export function SignUp() {
           const userId = response.data.createdUser._id;
           localStorage.setItem("userId", userId);
           setLogin(true);
+          Toast("success", "Signed Up successfully.");
           navigate("/home");
         }
       } catch (error) {
-        console.error("sign up error", error);
+        Toast("error", error);
       }
     } else {
       setEmptyAlert(true);
