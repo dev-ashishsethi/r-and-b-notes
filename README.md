@@ -53,19 +53,19 @@ https://user-images.githubusercontent.com/89299065/169649013-68fd97fa-232f-419b-
     - Sort by creation date
     - Sort by Priority
 
-### 3. Label Page :
+### 1. Label Page :
 
 - All the notes are listed according to label category.
 
-### 4. Archive Page :
+### 2. Archive Page :
 
 - Consist the notes which are archived from home page.
 
-### 4. Trash Page :
+### 3. Trash Page :
 
 - Consist the notes which are Trashed from home page.
 
-### 6. Sign Up page -
+### 4. Sign Up page -
 
 - Input first and last name
 - Input email address
@@ -73,7 +73,7 @@ https://user-images.githubusercontent.com/89299065/169649013-68fd97fa-232f-419b-
 - SignUp button
 - SignIn button
 
-### 7. Login page -
+### 5. Login page -
 
 - Input Username
 - Input password
@@ -81,10 +81,10 @@ https://user-images.githubusercontent.com/89299065/169649013-68fd97fa-232f-419b-
 - Test Login button
 - Create a New Account button
 
-### 8. Log out button
+### 6. Log out button
 
 
-### 10. Loading & Alerts/Toasts
+### 7. Loading & Alerts/Toasts
 
 - User is notified when the password or email is wrong.
 - Loader is displayed for each API call, add to cart, remove from cart, move to wishlist, and for the update in quantity
